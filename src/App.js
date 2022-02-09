@@ -16,13 +16,19 @@ import {
 const App = () => {
   const [markdownText, setMarkdownText] = useState('# Hi! This is the first page! \n\n---\n\n# This is the second page!')
   const [slideHtmlContent, setSlideHtmlContent] = useState('')
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     if (markdownText) {
+      setLoading(true)
       generateSlide(markdownText)
-        .then(response => setSlideHtmlContent(response))
+        .then(response => {
+          setSlideHtmlContent(response)
+          setLoading(false)
+        })
     } else {
       setSlideHtmlContent('')
+      setLoading(false)
     }
   }, [markdownText])
 
@@ -57,7 +63,10 @@ const App = () => {
           markdownText={markdownText}
           onChangeMarkdownText={handleChangeMarkdownText}
         />
-        <SlidePreview htmlContent={slideHtmlContent} />
+        <SlidePreview
+          htmlContent={slideHtmlContent}
+          loading={loading}
+        />
       </RowContainer>
     </AppContainer>
     :
