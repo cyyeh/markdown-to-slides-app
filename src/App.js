@@ -8,6 +8,7 @@ import Headline from './components/headline/headline.component'
 import ButtonComponent from './components/button/button.component'
 import MarkdownEditor from './components/markdown-editor/markdown-editor.component'
 import SlidePreview from './components/slide-preview/slide-preview.component'
+import MobileScreen from './components/mobile-screen/mobile-screen.component'
 import {
   generateSlide
 } from './apis/generateSlide'
@@ -43,6 +44,7 @@ const App = () => {
   }
 
   return (
+    window.innerWidth > 800 ?
     <AppContainer>
       <Headline />
       <ButtonComponent
@@ -58,6 +60,8 @@ const App = () => {
         <SlidePreview htmlContent={slideHtmlContent} />
       </RowContainer>
     </AppContainer>
+    :
+    <MobileScreen />
   )
 }
 
