@@ -16,11 +16,10 @@ import {
 const App = () => {
   const [markdownText, setMarkdownText] = useState('# Hi! This is the first page! \n\n---\n\n# This is the second page!')
   const [slideHtmlContent, setSlideHtmlContent] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if (markdownText) {
-      setLoading(true)
       generateSlide(markdownText)
         .then(response => {
           setSlideHtmlContent(response)
