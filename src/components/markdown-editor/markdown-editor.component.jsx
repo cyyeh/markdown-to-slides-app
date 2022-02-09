@@ -13,7 +13,7 @@ const MarkdownEditor = ({ markdownText, onChangeMarkdownText }) => (
       previewOptions={{
         rehypePlugins: [[rehypeSanitize]],
       }}
-      height={600}
+      height={550}
       preview='edit'
     />
   </MarkdownEditorContainer>

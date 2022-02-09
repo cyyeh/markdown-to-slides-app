@@ -14,12 +14,13 @@ const Iframe = (props) => {
     doc.write(props.content)
     doc.close()
     frame.style.width = '100%'
-    frame.style.height = `${frame.contentWindow.document.body.scrollHeight}px`
+    frame.style.height = '550px'
   }
 
   return (
     <IframeContainer>
       <IframeComponent
+        id="slide-preview"
         title="slide"
         ref={writeHTML}
       />
