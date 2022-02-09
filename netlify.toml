@@ -1,0 +1,3 @@
+[build]
+  command = "yarn functions-build"
+  functions = ".netlify/functions/"
