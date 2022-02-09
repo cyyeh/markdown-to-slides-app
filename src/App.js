@@ -12,7 +12,7 @@ import {
 } from './apis/generateSlide'
 
 const App = () => {
-  const [markdownText, setMarkdownText] = useState('# Hello, Word!')
+  const [markdownText, setMarkdownText] = useState('# Hi! This is the first page! \n\n---\n\n# This is the second page!')
   const [slideHtmlContent, setSlideHtmlContent] = useState('')
 
   useEffect(() => {
